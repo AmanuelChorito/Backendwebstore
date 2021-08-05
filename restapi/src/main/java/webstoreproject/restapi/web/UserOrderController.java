@@ -25,9 +25,9 @@ public class UserOrderController {
 
     @PostMapping("/orders")
     public  ResponseEntity<?>addOrder(@RequestBody UserOrder userOrder){
-//        System.out.println(userOrder.getOrder().getOrderLineList().toString());
-//        System.out.println("orderNumber"+userOrder.getOrder().getOrderNumber());
-//        System.out.println("price"+userOrder.getOrder().getTotalOrderPrice());
+        System.out.println(userOrder.getOrder().getOrderLineList().toString());
+        System.out.println("orderNumber"+userOrder.getOrder().getOrderNumber());
+        System.out.println("price"+userOrder.getOrder().getTotalOrderPrice());
        UserOrder userOrder1= userOrderService.createOrder(userOrder);
         return new ResponseEntity<>(userOrder1, HttpStatus.OK);
     }
